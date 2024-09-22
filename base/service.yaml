@@ -1,0 +1,32 @@
+
+# test1-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1-service
+  namespace: dev
+spec:
+  selector:
+    app: app1
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+
+---
+
+# test2-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: app2-service
+  namespace: dev
+spec:
+  selector:
+    app: app2
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
