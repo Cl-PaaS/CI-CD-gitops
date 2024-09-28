@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-nginx1
+  name: dev-nginx1
   namespace: dev
   labels:
-    app: app-nginx1
+    dev: dev-nginx1
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app-nginx1
+      dev: dev-nginx1
   template:
     metadata:
       labels:
-        app: app-nginx1
+        dev: dev-nginx1
     spec:
       containers:
-      - name: app-nginx1
+      - name: dev-nginx1
         image: 210.178.40.54:32349/test-nginx:latest 
         imagePullPolicy: Always
         ports:
@@ -28,22 +28,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-nginx2
+  name: dev-nginx2
   namespace: dev
   labels:
-    app: app-nginx2
+    dev: dev-nginx2
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app-nginx2
+      dev: dev-nginx2
   template:
     metadata:
       labels:
-        app: app-nginx2
+        dev: dev-nginx2
     spec:
       containers:
-      - name: app-nginx2
+      - name: dev-nginx2
         image: 210.178.40.54:32349/test-nginx:latest
         imagePullPolicy: Always
         ports:
