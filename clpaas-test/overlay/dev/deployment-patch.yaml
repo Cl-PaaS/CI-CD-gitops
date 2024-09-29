@@ -9,12 +9,10 @@ spec:
     spec:
       containers:
       - name: app-nginx1
-        image: 210.178.40.111:32349/test-nginx:latest
+        image: nginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: nexus
 
 ---
 apiVersion: apps/v1
@@ -28,9 +26,7 @@ spec:
     spec:
       containers:
       - name: app-nginx2
-        image: 210.178.40.111:32349/test-nginx:latest
+        image: nginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: nexus
