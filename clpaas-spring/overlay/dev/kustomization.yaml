@@ -6,4 +6,4 @@ patches:
 - path: deployment-patch.yaml
 images:
 - name: https://hub.docker.com/repository/docker/devyubin/clpaas-spring
-  newTag: "20"
+  newTag: "21"
