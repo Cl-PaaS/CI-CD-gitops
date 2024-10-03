@@ -1,0 +1,19 @@
+kind: Deployment
+metadata:
+  name: clpaas-spring
+  namespace: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: clpaas-spring
+  template:
+    metadata:
+      labels:
+        name: clpaas-spring
+    spec:
+      containers:
+      - name: clpaas-spring
+        image: clpaas-spring:latest
+        ports:
+        - containerPort: 8080
