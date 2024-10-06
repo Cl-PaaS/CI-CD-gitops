@@ -6,4 +6,4 @@ patches:
 - path: deployment-patch.yaml
 images:
 - name: https://hub.docker.com/repository/docker/tmd0110/clpaas-nest
-  newTag: "27"
+  newTag: "28"
