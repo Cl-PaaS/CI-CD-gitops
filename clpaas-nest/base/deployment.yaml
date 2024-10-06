@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clpaas-nest
+  namespace: dev
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: clpaas-nest
+  template:
+    metadata:
+      labels:
+        name: clpaas-nest
+    spec:
+      containers:
+      - name: clpaas-nest
+        image: tmd0110/clpass-nest:latest
+        ports:
+        - containerPort: 3000
