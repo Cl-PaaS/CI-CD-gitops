@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: clpaas-nest # 기존 컨테이너 이름
-          image: tmd0110/clpass-nest:latest  # 실질적으로 업데이트할 이미지 태그
+          image: tmd0110/clpaas-nest:latest  # 실질적으로 업데이트할 이미지 태그

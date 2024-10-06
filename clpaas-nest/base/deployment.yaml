@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: clpaas-nest
-        image: tmd0110/clpass-nest:latest
+        image: tmd0110/clpaas-nest:latest
         ports:
         - containerPort: 3000
