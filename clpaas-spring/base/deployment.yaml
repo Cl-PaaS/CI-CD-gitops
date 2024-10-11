@@ -13,6 +13,8 @@ spec:
       labels:
         name: clpaas-spring
     spec:
+      nodeSelector:
+        worker: "true"
       containers:
         - name: clpaas-spring
           image: devyubin/clpaas-spring:latest
