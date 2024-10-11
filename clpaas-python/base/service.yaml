@@ -4,9 +4,10 @@ metadata:
   name: clpaas-python
   namespace: dev
 spec:
+  type: NodePort
+  selector:
+    name: clpaas-python
   ports:
     - port: 5000
       targetPort: 5000
       nodePort: 30003
-  selector:
-    name: clpaas-python
