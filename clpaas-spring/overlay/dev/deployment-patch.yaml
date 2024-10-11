@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clpaas-spring  # 기존 배포 이름
+  name: clpaas-spring # 기존 배포 이름
   namespace: dev
 spec:
   template:
     spec:
       containers:
-        - name: clpaas-spring  # 기존 컨테이너 이름
-          image: devyubin/clpaas-spring:latest  # 실질적으로 업데이트할 이미지 태그
+        - name: clpaas-spring # 기존 컨테이너 이름
+          image: devyubin/clpaas-spring:latest # 실질적으로 업데이트할 이미지 태그
 

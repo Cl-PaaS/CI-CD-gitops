@@ -14,7 +14,7 @@ spec:
         name: clpaas-spring
     spec:
       containers:
-      - name: clpaas-spring
-        image: devyubin/clpaas-spring:latest
-        ports:
-        - containerPort: 8080
+        - name: clpaas-spring
+          image: devyubin/clpaas-spring:latest
+          ports:
+            - containerPort: 8080

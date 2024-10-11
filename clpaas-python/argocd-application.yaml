@@ -2,18 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: clpaas-python
-  namespace: argocd  # Argo CD가 설치된 네임스페이스
+  namespace: argocd # Argo CD가 설치된 네임스페이스
 spec:
-  project: default  # 사용할 프로젝트
+  project: default # 사용할 프로젝트
   source:
-    repoURL: 'https://gitlab.com/cl-paas/clpaas-gitops.git'  # Git 리포지토리 URL
-    targetRevision: HEAD  # 사용할 브랜치
-    path: 'clpaas-python/base'  # base 디렉토리 경로
+    repoURL: "https://gitlab.com/cl-paas/clpaas-gitops.git" # Git 리포지토리 URL
+    targetRevision: HEAD # 사용할 브랜치
+    path: "clpaas-python/base" # base 디렉토리 경로
   destination:
-    server: 'https://kubernetes.default.svc'  # Kubernetes API 서버
-    namespace: dev  # 배포할 네임스페이스
+    server: "https://kubernetes.default.svc" # Kubernetes API 서버
+    namespace: dev # 배포할 네임스페이스
   syncPolicy:
     automated:
-      prune: true  # 삭제된 리소스를 자동으로 제거
-      selfHeal: true  # 상태가 변경된 경우 자동으로 복구
+      prune: true # 삭제된 리소스를 자동으로 제거
+      selfHeal: true # 상태가 변경된 경우 자동으로 복구
 

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clpaas-python
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: clpaas-python
+  template:
+    metadata:
+      labels:
+        name: clpaas-python
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+        worker: "true"
+      containers:
+        - image: hnnynh/clpaas-python:latest
+          name: clpaas-python
+          ports:
+            - protocol: TCP
+              containerPort: 5000
