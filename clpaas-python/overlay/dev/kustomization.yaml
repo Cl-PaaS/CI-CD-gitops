@@ -6,4 +6,4 @@ patches:
 - path: deployment-patch.yaml
 images:
 - name: https://hub.docker.com/repository/docker/hnnynh/clpaas-python
-  newTag: "36"
+  newTag: "38"
