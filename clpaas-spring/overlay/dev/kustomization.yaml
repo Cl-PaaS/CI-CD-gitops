@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 patches:
-  - path: deployment-patch.yaml
+- path: deployment-patch.yaml
 images:
-  - name: https://hub.docker.com/repository/docker/devyubin/clpaas-spring
-    newTag: "25"
+- name: https://hub.docker.com/repository/docker/devyubin/clpaas-spring
+  newTag: "37"
