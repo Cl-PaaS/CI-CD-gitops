@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-application-all
+  namespace: argocd  # Argo CD가 설치된 네임스페이스
+spec:
+  generators:
+  - list:
+      elements:
+      - name: clpaas-python
+        namespace: dev  # python 앱이 배포될 네임스페이스
+        repoURL: 'https://gitlab.com/cl-paas/clpaas-gitops.git'  # Python 앱의 Git 리포지토리 URL
+        path: 'clpaas-python/base'  # Git 리포지토리 내의 경로
+        targetRevision: HEAD
+      - name: clpaas-nest
+        namespace: dev  # NestJS 앱이 배포될 네임스페이스
+        repoURL: 'https://github.com/cl-paas/clpaas-gitops.git'  # NestJS 앱의 Git 리포지토리 URL
+        path: 'clpaas-nest/base'  # Git 리포지토리 내의 경로
+        targetRevision: HEAD
+      - name: clpaas-spring
+        namespace: dev  # spring 앱이 배포될 네임스페이스
+        repoURL: 'https://github.com/cl-paas/clpaas-gitops.git'  # spring 앱의 Git 리포지토리 URL
+        path: 'clpaas-spring/base'  # Git 리포지토리 내의 경로
+        targetRevision: HEAD
+  template:
+    metadata:
+      labels:
+        app: argocd-application-all
+    spec:
+      project: default  # Argo CD 프로젝트 이름
+      source:
+        repoURL: '{{ .repoURL }}'
+        targetRevision: '{{ .targetRevision }}'
+        path: '{{ .path }}'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{ .namespace }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+
